@@ -1,16 +1,13 @@
 from functools import wraps
 
 from django.conf import settings
-from django.contrib.auth import REDIRECT_FIELD_NAME
-from django.contrib.auth import mixins
+from django.contrib.auth import REDIRECT_FIELD_NAME, mixins
 from django.contrib.auth.views import redirect_to_login
-from django.core.exceptions import PermissionDenied, ImproperlyConfigured, FieldError
+from django.core.exceptions import (FieldError, ImproperlyConfigured,
+                                    PermissionDenied)
 from django.shortcuts import get_object_or_404
-from django.utils.decorators import available_attrs
 from django.utils.encoding import force_text
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
-
-
 # These are made available for convenience, as well as for use in Django
 # versions before 1.9. For usage help see Django's docs for 1.9 or later.
 from django.views.generic.edit import BaseCreateView
